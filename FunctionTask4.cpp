@@ -1,17 +1,31 @@
 ﻿#include <iostream>
 
-void evendigits(long&, int*);
+void evendigits(long long int&, int&);
 
 int main()
 {
     int ans = 0;
-    long n = 9223372036854775806;
-    evendigits(n, &ans);
-    std::cout << ans;
+    int* pans = &ans;
+    long long int n = 9223372036854775806;
+    std::cout << ans << std::endl;
+    
+    evendigits(n, ans);
+    
+    std::cout << ans << std::endl;
 }
 
-void evendigits(long &n, int *ans)
+void evendigits(long long int &n, int& ans)
 {
-    std::cout << n << std::endl;
-    std::cout << ans << std::endl;
+    int temp;
+    while (n)
+    {
+        temp = n % 10;
+        
+        if (temp % 2 == 0)
+        {
+            ans+=1;
+        }
+        n /= 10;
+        
+    }
 }
