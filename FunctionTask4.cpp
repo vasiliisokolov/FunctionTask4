@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include <cassert>
+
 
 void evendigits(long long&, int&);
 
@@ -24,7 +24,6 @@ void evendigits(long long& n, int& ans)
         {
             ans++;
         }
-        if (temp==9) break;
         n /= 10;
               
         evendigits(n, ans);
